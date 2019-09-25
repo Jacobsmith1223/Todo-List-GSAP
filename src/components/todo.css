@@ -1,0 +1,5 @@
+.todoItem{
+    position: relative;
+    cursor: pointer;
+    opacity: 0;
+}

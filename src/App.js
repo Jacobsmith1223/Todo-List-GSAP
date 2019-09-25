@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import {Provider} from 'react-redux'
+import store from './store/index'
+import TodoInput from './components/TodoInput'
+import TodosList from './components/TodosList'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  constructor(){
+    super()
+
+    this.state = {
+
+    }
+  }
+  render() {
+    return (
+      <Provider store = {store}>
+      <div className='App'>
+        <div className='container'>
+          <div className='row'>
+            <div className='col-md-12'>
+              <div className='display-4 text-center mb-2'>
+                Simple Todo List with GSAP
+              </div>
+            </div>
+          </div>
+          <TodoInput />
+          <TodosList/>
+        </div>
+       </div>
+      </Provider>
+    )
+  }
 }
-
-export default App;
